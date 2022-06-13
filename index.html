@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Random Password | Hossam Ghallab</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      flex-direction: column;
+    }
+    div {
+      font-size: 40px;
+      background-color: #eee;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    span {
+      background-color: rgb(0, 89, 255);
+      color: white;
+      display: block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 25px;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="pass">Password</div>
+  <span class="generate">Generate</span>
+
+  <script>
+    let passEl = document.querySelector(".pass");
+    let btnEl = document.querySelector(".generate");
+
+  btnEl.onclick = function () {
+    let char = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%$*()#@";
+    let charsCount = 15;
+    let randomPass ="";
+    for(let i = 0; i < charsCount; i++) {
+      randomPass += char[Math.floor(Math.random() * char.length)];
+    }
+    passEl.innerHTML = randomPass;
+  }
+  </script>
+</body>
+</html>   
